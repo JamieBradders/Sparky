@@ -1,0 +1,32 @@
+{
+    "version" : "0.0.1",
+
+    "vendor" : {
+        "bootstrap" : {
+            "styles"   : {
+                "src"  : "./app/vendor/bootstrap/scss/**/*",
+                "dest" : "./app/styles/bootstrap/"
+            },
+            "scripts"   : {
+                "src"  : "./app/vendor/bootstrap/js/dist/**/*",
+                "dest" : "./app/scripts/bootstrap/"
+            }
+        },
+
+        "jquery" : {
+            "src" : "./app/vendor/jquery/dist/jquery.min.js",
+            "dest" : "./app/scripts/jquery/"
+        }
+    },
+
+    "source" : {
+        "scss"  : "./app/styles/styles.scss",
+        "views" : "./app/views/pages/**/*"
+    },
+
+    "dest" : {
+        "css"   : "dist/css/",
+        "views" : "dist/"
+    }
+
+}

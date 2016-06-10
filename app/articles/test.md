@@ -3,4 +3,4 @@ title: Hello World
 layout: post.jade
 ---
 
-hello
+This is a pug / jade file and it is going to work like this.

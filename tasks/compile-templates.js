@@ -1,16 +1,22 @@
 module.exports = (gulp, plugins, config) => {
 
     // code...
-    gulp.task('build-nunjucks-templates', function () {
-        const stream = gulp.src(config.source.views)
-            .pipe(plugins.nunjucksRender({
-                path: ['./app/views/'] // String or Array
-            }))
-            .pipe(gulp.dest(config.dest.views));
+    gulp.task('views', function () {
+        const stream = gulp.src('./app/views/pages/*.jade')
+            .pipe(plugins.jade())
+            .pipe(gulp.dest('./dist/'))
 
         return stream;
     });
 
-    gulp.task('views', ['build-nunjucks-templates'])
+    // compile .md to .html
+    gulp.task('articles', function() {
+        const stream = gulp.src('./app/articles/**/*.md')
+            .pipe(plugins.frontMatter())
+            .pipe(plugins.markdown())
+            .pipe(plugins.layout({ "layout" : "./app/views/layouts/post.jade" }, (file) => { return file.frontMatter; }))
+            .pipe(gulp.dest('./dist/articles/'));
 
+        return stream;
+    });
 };

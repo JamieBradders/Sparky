@@ -19,10 +19,11 @@ tasks.forEach((task) => {
  * Watcher Tasks
  */
 gulp.task('watch', () => {
-    gulp.watch('app/styles/**/*', ['styles']);
-    gulp.watch('app/scripts/**/*', ['scripts']);
-    gulp.watch('app/images/**/*', ['images']);
-    gulp.watch('app/views/**/*', ['views']);
+    gulp.watch('app/styles/**/*',   ['styles']);
+    gulp.watch('app/scripts/**/*',  ['scripts']);
+    gulp.watch('app/images/**/*',   ['images']);
+    gulp.watch('app/views/**/*',    ['views']);
+    gulp.watch('app/articles/**/*', ['articles']);
 });
 
 /**

@@ -12,21 +12,20 @@
                 "dest" : "./app/scripts/bootstrap/"
             }
         },
-
         "jquery" : {
             "src" : "./app/vendor/jquery/dist/jquery.min.js",
             "dest" : "./app/scripts/jquery/"
         }
     },
 
-    "source" : {
-        "scss"  : "./app/styles/styles.scss",
-        "views" : "./app/views/pages/**/*"
-    },
-
-    "dest" : {
-        "css"   : "dist/css/",
-        "views" : "dist/"
+    "theme" : {
+        "scss" : {
+            "source"  : "./app/styles/styles.scss",
+            "dest"    : "dist/css/"
+        },
+        "views" : {
+            "source"  : "./app/views/pages/**/*",
+            "dest"    : "dist/"
+        }
     }
-
 }

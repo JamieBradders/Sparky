@@ -31,8 +31,8 @@ gulp.task('watch', () => {
  * @TODO -> Seperate pure-css task, call it vendor perhaps?
  * @TODO -> this will become the production task
  */
-gulp.task('default', () => {
-    gulp.start('vendor', 'styles', 'scripts', 'images', 'views', 'webserver', 'watch');
+gulp.task('default', ['vendor'], () => {
+    gulp.start('styles', 'scripts', 'images', 'views', 'webserver', 'watch');
 });
 
 /**
@@ -41,5 +41,5 @@ gulp.task('default', () => {
  * @TODO -> Optimization tasks will probably fall within this e.g. minifying etc.
  */
 gulp.task('production', () => {
-    gulp.start('vendor', 'styles', 'scripts', 'images');
+    gulp.start('vendor', 'styles', 'scripts', 'images', 'views');
 });

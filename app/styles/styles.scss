@@ -1,1 +1,8 @@
+@import "config";
+
+// Vendor Styles
 @import "bootstrap/bootstrap";
+
+// Theme Styles
+@import "base/all";
+@import "sections/all";

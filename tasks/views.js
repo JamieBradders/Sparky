@@ -16,8 +16,14 @@ module.exports = (gulp, plugins, config) => {
             .pipe(plugins.frontMatter())
             .pipe(plugins.markdown())
             .pipe(plugins.layout({ "layout" : "./app/views/layouts/articles/post.jade" }, (file) => { return file.frontMatter; }))
-            .pipe(gulp.dest('./dist/articles/'));
 
+            .pipe(plugins.rename(function(path) {
+                const newFolderName = path.basename;
+                path.dirname += '/' + newFolderName;
+                path.basename = 'index';
+            }))
+
+            .pipe(gulp.dest('./dist/articles/'));
         return stream;
     });
 };

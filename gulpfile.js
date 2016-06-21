@@ -2,6 +2,7 @@ const gulp     = require('gulp');
 const plugins  = require('gulp-load-plugins')();
 const tasks    = require('fs').readdirSync('./tasks/');
 const config   = require('./sparky');
+const path     = require('path');
 
 /**
  * To see a list of plugins and their var name simply uncomment below
@@ -12,7 +13,7 @@ const config   = require('./sparky');
  * Run each task in the Task array : Each file in build-tasks/
  */
 tasks.forEach((task) => {
-    require('./tasks/' + task)(gulp, plugins, config)
+    require('./tasks/' + task)(gulp, plugins, config, path)
 });
 
 /**

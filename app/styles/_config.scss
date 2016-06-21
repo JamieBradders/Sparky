@@ -1,1 +1,9 @@
-$container_width : 850px;
+/* If you want to adjust the width of the container, then simply
+ * set the custom_container variable to true and Sparky will handle
+ * the styles accordingly.
+ * @NOTE => By activating the following variable, you will be overwriting
+ *          the Bootstrap container widths which are defined across multiple
+ *          device types.
+ */
+$custom_container : false;
+$container_width  : 950px;

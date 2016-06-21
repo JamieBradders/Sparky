@@ -1,3 +1,7 @@
-.container {
-    max-width: $container_width;
+// Only define a container width if the $custom_container var is true.
+// And the variable actually exists.
+@if variable-exists(custom_container) and $custom_container == true {
+  .container {
+      max-width: $container_width;
+  }
 }

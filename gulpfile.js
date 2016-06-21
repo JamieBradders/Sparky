@@ -5,9 +5,11 @@ const config   = require('./sparky');
 const path     = require('path');
 
 /**
- * To see a list of plugins and their var name simply uncomment below
+ * To see a list of plugins and their var name simply run gulp get-plugins
  */
- // console.log(plugins);
+ gulp.task('get-plugins', () => {
+   console.log(plugins);
+ })
 
 /**
  * Run each task in the Task array : Each file in build-tasks/
@@ -33,7 +35,7 @@ gulp.task('watch', () => {
  * @TODO -> this will become the production task
  */
 gulp.task('default', ['vendor'], () => {
-    gulp.start('styles', 'scripts', 'images', 'views', 'webserver', 'watch');
+    gulp.start('styles', 'scripts', 'images', 'build-views', 'watch');
 });
 
 /**

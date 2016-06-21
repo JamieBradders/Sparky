@@ -1,9 +1,21 @@
 module.exports = (gulp, plugins, config) => {
 
     // Compile views and articles
-    gulp.task('views', () => {
+    gulp.task('build-views', () => {
         const stream = gulp.src('./app/views/pages/*.pug')
             .pipe(plugins.pug())
+
+            .pipe(plugins.if(config.prettyUrl, plugins.rename(function(path) {
+                if (path.basename != 'index') {
+                  const newFolderName = path.basename;
+                  path.dirname += '/' + newFolderName;
+                  path.basename = 'index';
+
+                  console.log('Page urls prettified!');
+                }
+              })
+            ))
+
             .pipe(gulp.dest('./dist/'))
 
             if (config.articles === true) {
@@ -28,21 +40,25 @@ module.exports = (gulp, plugins, config) => {
         const stream = gulp.src('./app/articles/**/*.md')
             .pipe(plugins.frontMatter())
             .pipe(plugins.markdown())
-<<<<<<< HEAD
             .pipe(plugins.layout({ "layout" : "./app/views/layouts/articles/post.jade" }, (file) => { return file.frontMatter; }))
-=======
-            .pipe(plugins.layout({ "layout" : "./app/views/layouts/articles/post.jade" },
-                                (file) => { return file.frontMatter; }))
-            .pipe(gulp.dest('./dist/articles/'));
->>>>>>> 4d9a09db0b24fe4c31f93bf96aa93b3e94996d2e
 
-            .pipe(plugins.rename(function(path) {
+            /* Get the compiled markdown file and pass to /{article-name}/index.html
+             * For example /app/articles/example-article.md == /dist/articles/example-article/index.html
+             * This means you can send traffic to domain.co.uk/articles/example-article
+             */
+            .pipe(plugins.if(config.prettyUrl, plugins.rename(function(path) {
                 const newFolderName = path.basename;
                 path.dirname += '/' + newFolderName;
                 path.basename = 'index';
-            }))
+
+                console.log('Article urls prettified!');
+              })
+            ))
 
             .pipe(gulp.dest('./dist/articles/'));
         return stream;
     });
+
+    gulp.task('views', ['build-views']);
+
 };

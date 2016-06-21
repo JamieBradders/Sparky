@@ -4,8 +4,8 @@ module.exports = (gulp, plugins, config) => {
         const stream = gulp.src('./dist')
             .pipe(plugins.webserver({
                 livereload: true,
-                directoryListing: false,
-                open: true
+                open: true,
+                port: 3000
             }));
 
         return stream;

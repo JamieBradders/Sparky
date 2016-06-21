@@ -1,6 +1,7 @@
 {
-    "version" : "0.0.1",
-    "articles": false,
+    "version"   : "0.0.1",
+    "articles"  : true,
+    "prettyUrl" : true,
 
     "vendor" : {
         "bootstrap" : {

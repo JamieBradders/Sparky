@@ -21,12 +21,16 @@ tasks.forEach((task) => {
 /**
  * Watcher Tasks
  */
+const jsFiles = ["./app/scripts/**/*.js", "!./app/scripts/jspm_packages/**/*"];
+
 gulp.task('watch', () => {
-    gulp.watch('app/styles/**/*',   ['styles']);
-    gulp.watch('app/scripts/**/*',  ['scripts']);
-    gulp.watch('app/images/**/*',   ['images']);
-    gulp.watch('app/views/**/*',    ['views']);
-    gulp.watch('app/articles/**/*', ['articles']);
+    gulp.watch('./app/styles/**/*',   ['styles']);
+    gulp.watch('./app/images/**/*',   ['images']);
+    gulp.watch('./app/views/**/*',    ['views']);
+    gulp.watch('./app/articles/**/*', ['articles']);
+    gulp.watch(jsFiles, ['build-sfx']);
+    gulp.watch('./config.js', ['update-jspm-config']);
+
 });
 
 /**
@@ -35,7 +39,7 @@ gulp.task('watch', () => {
  * @TODO -> this will become the production task
  */
 gulp.task('default', ['vendor'], () => {
-    gulp.start('styles', 'scripts', 'images', 'build-views', 'watch');
+    gulp.start('styles', 'bundle-scripts', 'images', 'build-views', 'watch');
 });
 
 /**
@@ -44,5 +48,5 @@ gulp.task('default', ['vendor'], () => {
  * @TODO -> Optimization tasks will probably fall within this e.g. minifying etc.
  */
 gulp.task('production', () => {
-    gulp.start('vendor', 'styles', 'scripts', 'images', 'views');
+    gulp.start('vendor', 'styles', 'bundle-scripts', 'images', 'views');
 });

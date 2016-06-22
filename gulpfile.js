@@ -44,9 +44,8 @@ gulp.task('default', ['vendor'], () => {
 
 /**
  * Production Task
- * This is the task that we run on the server to build assets.
- * @TODO -> Optimization tasks will probably fall within this e.g. minifying etc.
+ * Run this task before deploying the contents of dist/
  */
 gulp.task('production', () => {
-    gulp.start('vendor', 'styles', 'bundle-scripts', 'images', 'views');
+    gulp.start('styles', 'bundle-scripts', 'images', 'build-views');
 });

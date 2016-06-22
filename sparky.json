@@ -17,6 +17,11 @@
         "jquery" : {
             "src" : "./app/vendor/jquery/dist/jquery.min.js",
             "dest" : "./app/scripts/jquery/"
+        },
+
+        "jspm" : {
+            "entry"   : "./app/scripts/main.js",
+            "dest"    : "./dist/js"
         }
     },
 
@@ -25,6 +30,7 @@
             "source"  : "./app/styles/styles.scss",
             "dest"    : "dist/css/"
         },
+
         "views" : {
             "source"  : "./app/views/pages/**/*",
             "dest"    : "dist/"

@@ -1,0 +1,54 @@
+// By default we override the the Bootstrap container width just for the purpose of
+// the Sparky landing page. If this is not relevant to you then feel free to remove.
+@if variable-exists(custom_container) and $custom-container == true {
+  .container {
+      max-width: $container-width;
+  }
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  // Margin bottom by footer height
+  background: $sparky-bg-colour;
+  color: $sparky-text-colour;
+  font-family: $sparky-body-font-family;
+  margin-bottom: 60px;
+}
+
+.footer {
+  bottom: 0;
+  color: $sparky-text-colour;
+  // Set the fixed height of the footer here
+  height: 60px;
+  position: absolute;
+  width: 100%;
+
+  a,
+  a:active,
+  a:visited,
+  a:hover {
+    color: $sparky-text-colour;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-family: $sparky-heading-font-family;
+  font-size: 10rem;
+  font-weight: 100;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+
+.container {
+  &--index {
+    padding: 12.5rem 0;
+  }
+}

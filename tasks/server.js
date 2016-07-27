@@ -7,7 +7,7 @@ module.exports = (gulp, plugins, config) => {
                 open: true,
                 port: 5000
             }));
-
+        console.log('⚡️  Sparky is running successfully! 💪🏻');
         return stream;
     });
 

@@ -1,9 +1,10 @@
+
 "use strict";
 
 module.exports = (gulp, plugins, config) => {
 
-    let bootstrap_src  = config.vendor.bootstrap.styles.src;
-    let bootstrap_dest = config.vendor.bootstrap.styles.dest;
+    let bootstrap_src  = './node_modules/bootstrap/scss/**';
+    let bootstrap_dest = './app/styles/bootstrap';
     // let jquery_src  = //
     // let jquery_dest = //
 

@@ -8,14 +8,14 @@ module.exports = (gulp, plugins, config) => {
     });
 
     gulp.task('build-sfx', () => {
-        const stream = gulp.src(config.vendor.jspm.entry)
+        const stream = gulp.src('./app/scripts/main.js')
             .pipe(plugins.jspm({
                 selfExecutingBundle: true,
                 minify: true,
                 skipSourceMaps: true
             }))
             .pipe(plugins.rename('app.min.js'))
-            .pipe(gulp.dest(config.vendor.jspm.dest));
+            .pipe(gulp.dest('./dist/js'));
 
         return stream;
     });

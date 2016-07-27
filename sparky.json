@@ -1,39 +1,4 @@
 {
     "version"   : "0.0.1",
-    "articles"  : false,
-    "prettyUrl" : true,
-
-    "vendor" : {
-        "bootstrap" : {
-            "styles"   : {
-                "src"  : "./app/vendor/bootstrap/scss/**/*",
-                "dest" : "./app/styles/bootstrap/"
-            },
-            "scripts"   : {
-                "src"  : "./app/vendor/bootstrap/js/dist/**/*",
-                "dest" : "./app/scripts/bootstrap/"
-            }
-        },
-        "jquery" : {
-            "src" : "./app/vendor/jquery/dist/jquery.min.js",
-            "dest" : "./app/scripts/jquery/"
-        },
-
-        "jspm" : {
-            "entry"   : "./app/scripts/main.js",
-            "dest"    : "./dist/js"
-        }
-    },
-
-    "theme" : {
-        "scss" : {
-            "source"  : "./app/styles/styles.scss",
-            "dest"    : "dist/css/"
-        },
-
-        "views" : {
-            "source"  : "./app/views/pages/**/*",
-            "dest"    : "dist/"
-        }
-    }
+    "prettyUrl" : true
 }

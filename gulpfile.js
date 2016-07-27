@@ -38,8 +38,8 @@ gulp.task('watch', () => {
  * @TODO -> Seperate pure-css task, call it vendor perhaps?
  * @TODO -> this will become the production task
  */
-gulp.task('default', ['vendor'], () => {
-    gulp.start('styles', 'bundle-scripts', 'images', 'build-views', 'watch');
+gulp.task('default', () => {
+    gulp.start('styles', 'bundle-scripts', 'images', 'build-views');
 });
 
 /**

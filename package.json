@@ -1,6 +1,6 @@
 {
   "name": "sparky",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "My static site tool",
   "main": "index.js",
   "scripts": {
@@ -39,10 +39,16 @@
     "directories": {
       "packages": "dist/js/jspm_packages"
     },
+    "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.7"
+    },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "core-js": "npm:core-js@^1.1.4"
     }
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2"
   }
 }

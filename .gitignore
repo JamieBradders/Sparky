@@ -1,5 +1,4 @@
 node_modules/
-
 app/vendor
-
 dist/
+.DS_Store

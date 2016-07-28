@@ -2,11 +2,8 @@
 "use strict";
 
 module.exports = (gulp, plugins, config) => {
-
     let bootstrap_src  = './node_modules/bootstrap/scss/**';
     let bootstrap_dest = './app/styles/bootstrap';
-    // let jquery_src  = //
-    // let jquery_dest = //
 
     gulp.task("get-local-vendor-files", ["clean-local-vendor-files"], () => {
         const stream = gulp.src(bootstrap_src)
@@ -23,5 +20,4 @@ module.exports = (gulp, plugins, config) => {
     })
 
     gulp.task('vendor', ['get-local-vendor-files']);
-
 };

@@ -1,13 +1,11 @@
-# Sparky
+# Sparky ⚡️
 
 ## This is my static site tool (built with Gulp.js)
 
-#### To Do
-- Construct a Bootstrap Configurator which builds up .scss files and allow easy customisation
-- Jade has now moved and become Pug. The gulp-layout module currently does not support .pug file types. Therefore, article templates are built in .jade files, however, all other templates can use .pug - I'll keep an eye on this and update when the module is updated.
+### Getting Started
+Clone the repo to your local machine and run `npm start`. This command will install the NPM dependencies, JSPM dependencies and run the initial Gulp command to build assets and bundle JSPM.
 
-#### Update
-To ensure sites are built to consistent standards I have included a scss-lint configuration file. The rules in this lint config adhere to the AirBnb CSS Styleguide - https://github.com/airbnb/css. You will need to use the Ruby Gem scss_lint, there are scss-lint plugins available for Atom and Sublime Text here:
+If all is well then run `gulp webserver` to kick start the local server, livereload is activated by default for you convenience. A watch command is also available and can be activated by running `gulp watch`.
 
-Atom - https://atom.io/packages/linter-scss-lint
-Sublime - https://packagecontrol.io/packages/SublimeLinter-contrib-scss-lint
+### Issues
+If you experience any issues then please raise them alternatively feel free to PR 😀

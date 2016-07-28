@@ -1,7 +1,11 @@
 {% extends 'layouts/master.html' %}
 
 {% block content %}
-  <div class="container container--index">
-    <h1 class="text-xs-center">Sparky</h1>
+  <div class="container container--index text-xs-center">
+    <h1>Sparky</h1>
+
+    {% markdown %}
+      ### Built with support for Markdown.
+    {% endmarkdown %}
   </div>
 {% endblock %}

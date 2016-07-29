@@ -23,7 +23,7 @@ tasks.forEach((task) => {
  */
 const jsFiles = ["./app/scripts/**/*.js", "!./app/scripts/jspm_packages/**/*"];
 
-gulp.task('watch', () => {
+gulp.task('watch', ['webserver'], () => {
     gulp.watch('./app/styles/**/*',   ['styles']);
     gulp.watch('./app/images/**/*',   ['images']);
     gulp.watch('./app/views/**/*',    ['views']);

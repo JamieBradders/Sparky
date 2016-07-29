@@ -1,3 +1,6 @@
+// Include google web font
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
+
 // By default we override the the Bootstrap container width just for the purpose of
 // the Sparky landing page. If this is not relevant to you then feel free to remove.
 @if variable-exists(custom_container) and $custom-container == true {
@@ -15,7 +18,7 @@ body {
   // Margin bottom by footer height
   background: $sparky-bg-colour;
   color: $sparky-text-colour;
-  font-family: $sparky-body-font-family;
+  font-family: $sparky-font-family;
   margin-bottom: 60px;
 }
 
@@ -44,7 +47,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: $sparky-heading-font-family;
+  font-family: $sparky-font-family;
   font-weight: 100;
   letter-spacing: 10px;
   text-transform: uppercase;

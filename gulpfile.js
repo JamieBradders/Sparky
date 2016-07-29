@@ -47,5 +47,5 @@ gulp.task('default', () => {
  * Run this task before deploying the contents of dist/
  */
 gulp.task('production', () => {
-    gulp.start('styles', 'bundle-scripts', 'images', 'build-views');
+    gulp.start('styles', 'bundle-scripts', 'images', 'build-views', 'generate-sitemap');
 });

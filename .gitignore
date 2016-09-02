@@ -1,4 +1,4 @@
 node_modules/
-app/vendor
+app/styles/bootstrap/
 dist/
 .DS_Store

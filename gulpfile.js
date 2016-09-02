@@ -21,16 +21,12 @@ tasks.forEach((task) => {
 /**
  * Watcher Tasks
  */
-const jsFiles = ["./app/scripts/**/*.js", "!./app/scripts/jspm_packages/**/*"];
-
 gulp.task('watch', ['webserver'], () => {
     gulp.watch('./app/styles/**/*',   ['styles']);
     gulp.watch('./app/images/**/*',   ['images']);
     gulp.watch('./app/views/**/*',    ['views']);
     gulp.watch('./app/articles/**/*', ['articles']);
-    gulp.watch(jsFiles, ['build-sfx']);
-    gulp.watch('./config.js', ['update-jspm-config']);
-
+    gulp.watch('./app/scripts/**/*',  ['bundle-scripts']);
 });
 
 /**

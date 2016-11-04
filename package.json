@@ -37,6 +37,6 @@
     "nunjucks-markdown": "^2.0.0"
   },
   "dependencies": {
-    "foundation-sites": "^6.2.4"
+    "inquirer": "^1.2.2"
   }
 }
